@@ -13,3 +13,10 @@ s->iterate( x; acc = Set{} | acc->including(x*x) );
 
 /* This is now correctly parsed as (2*x - 3*y) + 4*z
 The original version of the grammar gave 2*x - (3*y + 4*z) */ 
+
+
+self.employee->select(age > 50)->notEmpty()
+self.employee->select(p | p.age > 50)->notEmpty()
+self.employee->select(p : Person | p.age > 50)->notEmpty()
+
+collection->iterate(x : T; acc : T2 = Bag{} | acc->including(x.property))
